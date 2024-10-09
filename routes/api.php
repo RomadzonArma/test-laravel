@@ -28,3 +28,5 @@ Route::get('/transactions/monthly-targets', [TransactionController::class, 'mont
 Route::get('/transactions/month-targets/', [TransactionController::class, 'getAllMonthlyTargetsAndTransactions']);
 Route::post('/customers', [CustomerController::class, 'store']);
 Route::put('/customers/{id}', [CustomerController::class, 'update']);
+Route::post('/sales-orders', [TransactionController::class, 'createSalesOrder']);
+Route::get('/sales-orders/{id}', [TransactionController::class, 'getById']);

@@ -16,16 +16,19 @@ class SalesOrder extends Model
         'customer_id'
     ];
 
-    public function sale() {
-        return $this->belongsTo(Sale::class, 'sales_id'); 
+    public function sale()
+    {
+        return $this->belongsTo(Sale::class, 'sales_id');
     }
-    
 
-    public function customer(){
+
+    public function customer()
+    {
         return $this->belongsTo(Customer::class);
     }
 
-    public function salesOrderItems(){
+    public function salesOrderItems()
+    {
         return $this->hasMany(SalesOrderItem::class, 'order_id');
     }
 }

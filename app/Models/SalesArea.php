@@ -14,7 +14,8 @@ class SalesArea extends Model
         'name'
     ];
 
-    public function area(){
+    public function area()
+    {
         return $this->hasMany(Sale::class, 'area_id');
     }
 }

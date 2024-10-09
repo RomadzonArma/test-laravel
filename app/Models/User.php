@@ -18,11 +18,13 @@ class User extends Model
         'role_id'
     ];
 
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo(UserRole::class, 'role_id');
     }
 
-   public function sales(){
-       return $this->hasMany(Sale::class);
-   }
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
 }

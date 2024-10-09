@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "bbb8d668-5eaa-49ad-ae9e-57c924f105c9",
+		"name": "test-laravel",
+		"description": "Dokumentasi ini menjelaskan tentang cara mengakses layanan data penjualan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37174035"
+	},
+	"item": [
+		{
+			"name": "2a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions"
+					]
+				},
+				"description": "Menampilkan data transaksi bulanan selama 3 tahun terakhir"
+			},
+			"response": []
+		},
+		{
+			"name": "2b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/customer/998",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"customer",
+						"998"
+					]
+				},
+				"description": "Menampilkan data transaksi bulanan selama 3 tahun terakhir menggunakan filter customer"
+			},
+			"response": []
+		},
+		{
+			"name": "2c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/sales/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"sales",
+						"12"
+					]
+				},
+				"description": "Menampilkan data transaksi bulanan selama 3 tahun terakhir menggunakan filter sales"
+			},
+			"response": []
+		},
+		{
+			"name": "3a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/monthly-targets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"monthly-targets"
+					]
+				},
+				"description": "Menampilkan data target & transaksi bulanan pada tahun ini tannpa filter"
+			},
+			"response": []
+		},
+		{
+			"name": "3b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/monthly-targets?sales_id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"monthly-targets"
+					],
+					"query": [
+						{
+							"key": "sales_id",
+							"value": "7"
+						}
+					]
+				},
+				"description": "Menampilkan data target & transaksi bulanan pada tahun ini dengan filter sales"
+			},
+			"response": []
+		},
+		{
+			"name": "4a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/month-targets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"month-targets"
+					]
+				},
+				"description": "Menampilkan data target & transaksi dalam 1 bulan dari semua sales (default bulan ini).\n\nTerdapat parameter month dan year bertipe integer, sifatnya optional jika parameter month dan year maka akan menampilkan data berdasarkan bulan dan tahun tersebut. jika tidak mengirimkan paramater secara default akan menampilkan data di bulan ini saja."
+			},
+			"response": []
+		},
+		{
+			"name": "4c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/month-targets?month=3&year=2024&is_underperform=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"month-targets"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "3"
+						},
+						{
+							"key": "year",
+							"value": "2024"
+						},
+						{
+							"key": "is_underperform",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Menampilkan data target & transaksi dalam 1 bulan dari semua sales menggunakan filter is_underperform false yang mana revenue kurang dari target."
+			},
+			"response": []
+		},
+		{
+			"name": "4d",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/month-targets?month=3&year=2024&is_underperform=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"month-targets"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "3"
+						},
+						{
+							"key": "year",
+							"value": "2024"
+						},
+						{
+							"key": "is_underperform",
+							"value": "false"
+						}
+					]
+				},
+				"description": "Menampilkan data target & transaksi dalam 1 bulan dari semua sales menggunakan filter is_underperform false yang mana revenue lebih dari target."
+			},
+			"response": []
+		},
+		{
+			"name": "4b",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/transactions/month-targets?month=3&year=2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"transactions",
+						"month-targets"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "3"
+						},
+						{
+							"key": "year",
+							"value": "2024"
+						}
+					]
+				},
+				"description": "Menampilkan data target & transaksi dalam 1 bulan dari semua sales menggunakan filter berdasarkan bulan"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE CUSTOMER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"CV Media Lencana\",\r\n  \"address\": \"Dk. Tempuk Rejo No. 824, Bantul 17747, DIY\",\r\n  \"phone\": \"+628152007946\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://57b6-103-146-184-45.ngrok-free.app/api/customers",
+					"protocol": "https",
+					"host": [
+						"57b6-103-146-184-45",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"customers"
+					]
+				},
+				"description": "Membuat customer dengan menggunakan rest client dari Abstract API untuk validasi nomor hp"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE CUSTOMER",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"PT Manullang Jaya\",\r\n    \"address\" : \"Ds. Bakau Griya Utama No. 941, Tanjungbalai 74569, Lampung Tengah\",\r\n    \"phone\" : \"+6288713039609\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://57b6-103-146-184-45.ngrok-free.app/api/customers/1000",
+					"protocol": "https",
+					"host": [
+						"57b6-103-146-184-45",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"customers",
+						"1000"
+					]
+				},
+				"description": "Mengubah data customer dengan menggunakan rest client dari Abstract API untuk validasi nomor hp"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE SALES ORDER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reference_no\": \"INV79119601638381932\",\r\n    \"sales_id\": 1,\r\n    \"customer_id\": 1,\r\n    \"items\": [\r\n        {\r\n            \"product_id\": 1,\r\n            \"quantity\": 2,\r\n            \"production_price\": 550000,\r\n            \"selling_price\": 600000\r\n        },\r\n        {\r\n            \"product_id\": 2,\r\n            \"quantity\": 1,\r\n            \"production_price\": 730000,\r\n            \"selling_price\": 750000\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/sales-orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sales-orders"
+					]
+				},
+				"description": "Membuat data penjualan"
+			},
+			"response": []
+		}
+	]
+}

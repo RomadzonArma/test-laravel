@@ -16,7 +16,8 @@ class SalesTarget extends Model
         'sales_id'
     ];
 
-    public function sale(){
+    public function sale()
+    {
         return $this->belongsTo(Sale::class);
     }
 }

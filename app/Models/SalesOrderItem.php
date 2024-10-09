@@ -17,12 +17,15 @@ class SalesOrderItem extends Model
         'product_id',
         'order_id'
     ];
+    public $timestamps = false;
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 
-    public function salesOrder(){
+    public function salesOrder()
+    {
         return $this->belongsTo(SalesOrder::class, 'order_id');
     }
 }

@@ -32,8 +32,8 @@ return [
     ],
 
     'abstract_api' => [
-    'key' => env('ABSTRACT_API_KEY'),
-],
+        'key' => env('ABSTRACT_API_KEY'),
+    ],
 
 
 ];
